@@ -9,14 +9,14 @@
         <div class="logo">
             <a href="index.php">
                 
-<h3>Shopping Portal</h3>
+<h3>JU Recycle Bin</h3>
             </a>
         </div><!-- /.logo -->
     
     </div><!-- /.footer-logo -->
 
      <div class="module-body m-t-20">
-        <p class="about-us"> Nam libero tempore, cum soluta nobis est ses  eligendi optio cumque cum soluta nobis est ses  eligendi optio cumque.</p>
+        <p class="about-us"> Students of IIT-JU.</p>
     
         <div class="social-icons">
             
@@ -61,7 +61,7 @@
 	</div><!-- /.module-heading -->
 
 	<div class="module-body outer-top-xs">
-        <ul class="toggle-footer" style="">
+        <ul class="toggle-footer">
             <li class="media">
                 <div class="pull-left">
                      <span class="icon fa-stack fa-lg">
@@ -70,7 +70,7 @@
                     </span>
                 </div>
                 <div class="media-body">
-                    <p>New Delhi, Delhi</p>
+                    <p>Savar, Dhaka</p>
                 </div>
             </li>
 
@@ -82,7 +82,7 @@
                     </span>
                 </div>
                 <div class="media-body">
-                    <p>(011) 000000000000<br>(011) 000000000000</p>
+                    <p>01960567400<br>01910101011</p>
                 </div>
             </li>
 
@@ -94,7 +94,7 @@
                     </span>
                 </div>
                 <div class="media-body">
-                    <span><a href="#">info@phpgurukul.com</a></span>
+                    <span><a href="#">atmmju@gmail.com</a></span>
                 </div>
             </li>
               
