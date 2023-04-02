@@ -1,10 +1,10 @@
 <div class="span3">
-					<div class="sidebar">
+					<div class="sidebar" style="background-color:#b9d8c5f5;">
 
 
-<ul class="widget widget-menu unstyled">
-							<li>
-								<a class="collapsed" data-toggle="collapse" href="#togglePages">
+<ul class="widget widget-menu unstyled" >
+							<li >
+								<a class="collapsed" data-toggle="collapse" href="#togglePages" style="background-color:#b9d8c5f5;">
 									<i class="menu-icon icon-cog"></i>
 									<i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right"></i>
 									Order Management
@@ -56,7 +56,7 @@ $num1 = mysqli_num_rows($rt);
 							</li>
 							
 							<li>
-								<a href="manage-users.php">
+								<a href="manage-users.php" style="background-color:#b9d8c5f5;">
 									<i class="menu-icon icon-group"></i>
 									Manage users
 								</a>
@@ -65,18 +65,18 @@ $num1 = mysqli_num_rows($rt);
 
 
 						<ul class="widget widget-menu unstyled">
-                                <li><a href="category.php"><i class="menu-icon icon-tasks"></i> Create Category </a></li>
-                                <li><a href="subcategory.php"><i class="menu-icon icon-tasks"></i>Sub Category </a></li>
-                                <li><a href="insert-product.php"><i class="menu-icon icon-paste"></i>Insert Product </a></li>
-                                <li><a href="manage-products.php"><i class="menu-icon icon-table"></i>Manage Products </a></li>
+                                <li><a href="category.php" style="background-color:#b9d8c5f5;"><i class="menu-icon icon-tasks"></i> Create Category </a></li>
+                                <li><a href="subcategory.php" style="background-color:#b9d8c5f5;"><i class="menu-icon icon-tasks"></i>Sub Category </a></li>
+                                <li><a href="insert-product.php" style="background-color:#b9d8c5f5;"><i class="menu-icon icon-paste"></i>Insert Product </a></li>
+                                <li><a href="manage-products.php" style="background-color:#b9d8c5f5;"><i class="menu-icon icon-table"></i>Manage Products </a></li>
                         
                             </ul><!--/.widget-nav-->
 
 						<ul class="widget widget-menu unstyled">
-							<li><a href="user-logs.php"><i class="menu-icon icon-tasks"></i>User Login Log </a></li>
+							<li><a href="user-logs.php" style="background-color:#b9d8c5f5;"><i class="menu-icon icon-tasks"></i>User Login Log </a></li>
 							
 							<li>
-								<a href="logout.php">
+								<a href="logout.php" style="background-color:#b9d8c5f5;">
 									<i class="menu-icon icon-signout"></i>
 									Logout
 								</a>
