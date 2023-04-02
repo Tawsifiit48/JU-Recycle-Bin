@@ -84,8 +84,8 @@ $mail->SMTPAuth = true;
 $mail->SMTPSecure = "tls";      
 $mail->Host = 'smtp.gmail.com';
 $mail->Port = 587; 
-$mail->Username = "moeenuddin.miran@gmail.com";   //Enter your username/emailid
-$mail->Password = "qgkvmrbqahaeyjwb";   //Enter your password
+$mail->Username = "projectforju@gmail.com";   //Enter your username/emailid
+$mail->Password = "subsoywnghnmykuq";   //Enter your password subsoywnghnmykuq
 $mail->FromName = "shop";
 $mail->AddAddress($email);
 $mail->Subject = "Reset Password";
