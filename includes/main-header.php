@@ -20,7 +20,7 @@
 <div class="logo">
 	<a href="index.php">
 		
-		<h2>Shopping Portal</h2>
+		<h2>JU Recycle Bin</h2>
 
 	</a>
 </div>		
@@ -126,7 +126,7 @@ if(!empty($_SESSION['cart'])){
 				<div class="total-price-basket">
 					<span class="lbl">cart -</span>
 					<span class="total-price">
-						<span class="sign">Rs.</span>
+						<span class="sign">BDT</span>
 						<span class="value">00.00</span>
 					</span>
 				</div>
