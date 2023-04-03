@@ -27,7 +27,34 @@ body{
 	background: linear-gradient(to bottom, #e0f2f6 82%,#dde3e6 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0f2f6', endColorstr='#dde3e6',GradientType=0 ); /* IE6-9 */
 }
+.message{
+   position: sticky;
+   top:0;
+   margin:0 auto;
+   max-width: 1200px;
+   background-color: var(--white);
+   padding:2rem;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   z-index: 10000;
+   gap:1.5rem;
+}
 
+.message span{
+   font-size: 2rem;
+   color:var(--black);
+}
+
+.message i{
+   cursor: pointer;
+   color:var(--red);
+   font-size: 2.5rem;
+}
+
+.message i:hover{
+   transform: rotate(90deg);
+}
 img{
 	max-width:100%;
 }

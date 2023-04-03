@@ -2,6 +2,35 @@
 session_start();
 error_reporting(0);
 include('includes/config.php');
+
+$user_id = $_SESSION['id'];
+
+if(isset($_POST['submit'])){
+   $email = mysqli_real_escape_string($con, $_POST['email']);
+   $msg = mysqli_real_escape_string($con, $_POST['orderid']);
+
+
+   $select_message = mysqli_query($con, "SELECT * FROM `message` WHERE email = '$email' AND message = '$msg'") or die('1query failed');
+
+   if(mysqli_num_rows($select_message) > 0){
+      $message[] = 'message sent already!';
+   }else{
+
+   	$check_user = mysqli_query($con, "SELECT * FROM `users` WHERE id = '$user_id'") or die('2query failed');
+   	$my = mysqli_fetch_assoc($check_user);
+   	$name = $my['name'];
+   	$email = $my['email'];
+   	$contactno = $my['contactno'];
+
+
+      mysqli_query($con, "INSERT INTO `message`(user_id, name, email, number, message) VALUES('$user_id', '$name', '$email', '$contactno', '$msg')") or die('3query failed');
+      $message[] = 'message sent successfully!';
+   }
+
+}
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +44,7 @@ include('includes/config.php');
 	    <meta name="keywords" content="MediaCenter, Template, eCommerce">
 	    <meta name="robots" content="all">
 
-	    <title>Track Orders</title>
+	    <title>Contact Us</title>
 	    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	    <link rel="stylesheet" href="assets/css/main.css">
 	    <link rel="stylesheet" href="assets/css/green.css">
@@ -54,7 +83,7 @@ include('includes/config.php');
 		<div class="breadcrumb-inner">
 			<ul class="list-inline list-unstyled">
 				<li><a href="home.html">Home</a></li>
-				<li class='active'>Track your orders</li>
+				<li class='active'>Contact Us</li>
 			</ul>
 		</div><!-- /.breadcrumb-inner -->
 	</div><!-- /.container -->
@@ -65,18 +94,18 @@ include('includes/config.php');
 		<div class="track-order-page inner-bottom-sm">
 			<div class="row">
 				<div class="col-md-12">
-	<h2>Track your Order</h2>
-	<span class="title-tag inner-top-vs">Please enter your Order ID in the box below and press Enter. This was given to you on your receipt and in the confirmation email you should have received. </span>
-	<form class="register-form outer-top-xs" role="form" method="post" action="order-details.php">
+	<h2>Message Us</h2>
+	<span class="title-tag inner-top-vs"><!--Please enter your Order ID in the box below and press Enter. This was given to you on your receipt and in the confirmation email you should have received.--> </span>
+	<form class="register-form outer-top-xs" role="form" method="post" action="">
 		<div class="form-group">
-		    <label class="info-title" for="exampleOrderId1">Order ID</label>
-		    <input type="text" class="form-control unicase-form-control text-input" name="orderid" id="exampleOrderId1" >
+		    <label class="info-title" for="exampleOrderId1">message</label>
+		    <input type="text" required placeholder="enter your message" class="form-control unicase-form-control text-input" name="orderid" id="exampleOrderId1" >
 		</div>
 	  	<div class="form-group">
 		    <label class="info-title" for="exampleBillingEmail1">Registered Email</label>
-		    <input type="email" class="form-control unicase-form-control text-input" name="email" id="exampleBillingEmail1" >
+		    <input type="email" class="form-control unicase-form-control text-input" name="email" required placeholder="enter your email" id="exampleBillingEmail1" >
 		</div>
-	  	<button type="submit" name="submit" class="btn-upper btn btn-primary checkout-page-button">Track</button>
+	  	<button type="submit" name="submit" class="btn-upper btn btn-primary checkout-page-button">Message</button>
 	</form>	
 </div>			</div><!-- /.row -->
 		</div><!-- /.sigin-in-->
