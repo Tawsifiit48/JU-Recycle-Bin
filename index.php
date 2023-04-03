@@ -172,7 +172,7 @@ if(isset($_GET['action']) && $_GET['action']=="add"){
 					<li><a href="#books" data-toggle="tab">Books</a></li>
 					<li><a href="#electronics" data-toggle="tab">Electronics</a></li>
 					<li><a href="#furniture" data-toggle="tab">Furniture</a></li>
-					
+					<li><a href="#fashion" data-toggle="tab">Cycle</a></li>
 				</ul><!-- /.nav-tabs -->
 			</div>
 
