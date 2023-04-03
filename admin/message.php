@@ -67,7 +67,8 @@ if(isset($_GET['del']))
 									</thead>
 									<tbody>
 
-<?php $query=mysqli_query($con,"select products.*,category.categoryName,subcategory.subcategory from products join category on category.id=products.category join subcategory on subcategory.id=products.subCategory");
+<?php 
+$query = mysqli_query($con, "SELECT * FROM `message`") or die('query failed');
 $cnt=1;
 while($row=mysqli_fetch_array($query))
 {
@@ -76,9 +77,10 @@ while($row=mysqli_fetch_array($query))
 											<td><?php echo htmlentities($cnt);?></td>
 											<td><?php echo htmlentities($row['name']);?></td>
 											<td><?php echo htmlentities($row['email']);?></td>
-											<td><?php echo htmlentities($row['subcategory']);?></td>
+											<td><?php echo htmlentities($row['message']);?></td>
 										</tr>
-										<?php $cnt=$cnt+1; } ?>
+										<?php $cnt=$cnt+1; } 
+?>
 										
 								</table>
 							</div>
