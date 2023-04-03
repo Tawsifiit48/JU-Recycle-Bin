@@ -70,7 +70,7 @@ if(isset($_REQUEST['pwdrst']))
      <p><b>Hello!</b></p>
      <p>You are recieving this email because we recieved a password reset request for your account.</p>
      <br>
-     <p><button class="btn btn-primary"><a href="http://localhost/shopping/passwordreset.php?secret=' .base64_encode($email).'">Reset Password</a></button></p>
+     <p><button class="btn btn-primary"><a href="http://localhost/JU-Recycle-Bin/passwordreset.php?secret=' .base64_encode($email).'">Reset Password</a></button></p>
      <br>
      <p>If you did not request a password reset, no further action is required.</p>
     </div>';
@@ -86,7 +86,7 @@ $mail->Host = 'smtp.gmail.com';
 $mail->Port = 587; 
 $mail->Username = "projectforju@gmail.com";   //Enter your username/emailid
 $mail->Password = "subsoywnghnmykuq";   //Enter your password subsoywnghnmykuq
-$mail->FromName = "shop";
+$mail->FromName = "JU-Recycle-Bin";
 $mail->AddAddress($email);
 $mail->Subject = "Reset Password";
 $mail->isHTML( TRUE );
