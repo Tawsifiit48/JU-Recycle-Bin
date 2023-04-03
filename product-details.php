@@ -373,8 +373,8 @@ $num=mysqli_num_rows($rt);
 
 									<div class="col-sm-6">
 										<div class="price-box">
-											<span class="price">Rs. <?php echo htmlentities($row['productPrice']);?></span>
-											<span class="price-strike">Rs.<?php echo htmlentities($row['productPriceBeforeDiscount']);?></span>
+											<span class="price">BDT. <?php echo htmlentities($row['productPrice']);?></span>
+											<span class="price-strike">BDT.<?php echo htmlentities($row['productPriceBeforeDiscount']);?></span>
 										</div>
 									</div>
 
