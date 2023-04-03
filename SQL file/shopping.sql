@@ -65,7 +65,7 @@ INSERT INTO `category` (`id`, `categoryName`, `categoryDescription`, `creationDa
 (3, 'Books', 'Text and Note', '2023-01-24 19:17:37', '30-01-2023 12:22:24 AM'),
 (4, 'Electronics', 'Electronic Products', '2023-01-24 19:19:32', ''),
 (5, 'Furniture', 'test', '2023-01-24 19:19:54', ''),
-(6, 'Fashion', 'Fashion', '2023-02-20 19:18:52', '');
+(6, 'Cycle', 'Cycle', '2023-02-20 19:18:52', '');
 
 -- --------------------------------------------------------
 

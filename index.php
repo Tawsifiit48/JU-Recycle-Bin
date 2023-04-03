@@ -95,13 +95,13 @@ if(isset($_GET['action']) && $_GET['action']=="add"){
 <div id="hero" class="homepage-slider3">
 	<div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm">
 		<div class="full-width-slider">	
-			<div class="item" style="background-image: url(assets/images/slideBDT/slider5.jpg);">
+			<div class="item" style="background-image: url(assets/images/sliders/slider5.png);">
 				<!-- /.container-fluid -->
 			</div><!-- /.item -->
 		</div><!-- /.full-width-slider -->
 	    
 	    <div class="full-width-slider">
-			<div class="item full-width-slider" style="background-image: url(assets/images/slideBDT/slider4.jpg);">
+			<div class="item full-width-slider" style="background-image: url(assets/images/sliders/slider4.png);">
 			</div><!-- /.item -->
 		</div><!-- /.full-width-slider -->
 
@@ -172,7 +172,7 @@ if(isset($_GET['action']) && $_GET['action']=="add"){
 					<li><a href="#books" data-toggle="tab">Books</a></li>
 					<li><a href="#electronics" data-toggle="tab">Electronics</a></li>
 					<li><a href="#furniture" data-toggle="tab">Furniture</a></li>
-					<li><a href="seller-insert.php" data-toggle="tab">Seller</a></li>
+					
 				</ul><!-- /.nav-tabs -->
 			</div>
 

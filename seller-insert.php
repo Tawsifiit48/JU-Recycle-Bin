@@ -1,10 +1,10 @@
 
 <?php
 session_start();
-include('include/config.php');
-if(strlen($_SESSION['alogin'])==0)
+include('includes/config.php');
+if(strlen($_SESSION['login'])==0)
 	{	
-header('location:index.php');
+header('location:login.php');
 }
 else{
 	
@@ -31,9 +31,9 @@ if(!is_dir($dir)){
 		mkdir("productimages/".$productid);
 	}
 
-	move_uploaded_file($_FILES["productimage1"]["tmp_name"],"productimages/$productid/".$_FILES["productimage1"]["name"]);
-	move_uploaded_file($_FILES["productimage2"]["tmp_name"],"productimages/$productid/".$_FILES["productimage2"]["name"]);
-	move_uploaded_file($_FILES["productimage3"]["tmp_name"],"productimages/$productid/".$_FILES["productimage3"]["name"]);
+	move_uploaded_file($_FILES["productimage1"]["tmp_name"],"admin/productimages/$productid/".$_FILES["productimage1"]["name"]);
+	move_uploaded_file($_FILES["productimage2"]["tmp_name"],"admin/productimages/$productid/".$_FILES["productimage2"]["name"]);
+	move_uploaded_file($_FILES["productimage3"]["tmp_name"],"admin/productimages/$productid/".$_FILES["productimage3"]["name"]);
 $sql=mysqli_query($con,"insert into products(category,subCategory,productName,productCompany,productPrice,productDescription,shippingCharge,productAvailability,productImage1,productImage2,productImage3,productPriceBeforeDiscount) values('$category','$subcat','$productname','$productcompany','$productprice','$productdescription','$productscharge','$productavailability','$productimage1','$productimage2','$productimage3','$productpricebd')");
 $_SESSION['msg']="Product Inserted Successfully !!";
 
@@ -47,10 +47,37 @@ $_SESSION['msg']="Product Inserted Successfully !!";
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Seller| Insert Product</title>
-	<link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
-	<link type="text/css" href="css/theme.css" rel="stylesheet">
-	<link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
+     <!-- Bootstrap Core CSS -->
+     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	    
+	    <!-- Customizable CSS -->
+	    <link rel="stylesheet" href="assets/css/main.css">
+	    <link rel="stylesheet" href="assets/css/green.css">
+	    <link rel="stylesheet" href="assets/css/owl.carousel.css">
+		<link rel="stylesheet" href="assets/css/owl.transitions.css">
+		<!--<link rel="stylesheet" href="assets/css/owl.theme.css">-->
+		<link href="assets/css/lightbox.css" rel="stylesheet">
+		<link rel="stylesheet" href="assets/css/animate.min.css">
+		<link rel="stylesheet" href="assets/css/rateit.css">
+		<link rel="stylesheet" href="assets/css/bootstrap-select.min.css">
+
+		<!-- Demo Purpose Only. Should be removed in production -->
+		<link rel="stylesheet" href="assets/css/config.css">
+
+		<link href="assets/css/green.css" rel="alternate stylesheet" title="Green color">
+		<link href="assets/css/blue.css" rel="alternate stylesheet" title="Blue color">
+		<link href="assets/css/red.css" rel="alternate stylesheet" title="Red color">
+		<link href="assets/css/orange.css" rel="alternate stylesheet" title="Orange color">
+		<link href="assets/css/dark-green.css" rel="alternate stylesheet" title="Darkgreen color">
+		<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+		<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
+		
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="assets/images/favicon.ico">
+	<link type="text/css" href="admin/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" href="admin/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+	<link type="text/css" href="admin/css/theme.css" rel="stylesheet">
+	<link type="text/css" href="admin/images/icons/css/font-awesome.css" rel="stylesheet">
 	<link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'>
 <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
 <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
@@ -59,7 +86,7 @@ $_SESSION['msg']="Product Inserted Successfully !!";
 function getSubcat(val) {
 	$.ajax({
 	type: "POST",
-	url: "get_subcat.php",
+	url: "admin/get_subcat.php",
 	data:'cat_id='+val,
 	success: function(data){
 		$("#subcategory").html(data);
@@ -75,12 +102,50 @@ $("#suggesstion-box").hide();
 
 </head>
 <body>
-<?php include('include/header.php');?>
+<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+					<i class="icon-reorder shaded"></i>
+				</a>
+
+			  	<a class="brand" href="index.php">
+			  		JU Recycle Bin | Seller
+			  	</a>
+
+				<div class="nav-collapse collapse navbar-inverse-collapse">
+					<ul class="nav pull-right">
+						<li><a href="#">
+							Seller
+						</a></li>
+						<li class="nav-user dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								<img src="images/user.png" class="nav-avatar" />
+								<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="change-password.php">Change Password</a></li>
+								<li class="divider"></li>
+								<li><a href="logout.php">Logout</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div><!-- /.nav-collapse -->
+			</div>
+		</div><!-- /navbar-inner -->
+	</div><!-- /navbar -->
+
 
 	<div class="wrapper">
 		<div class="container">
 			<div class="row">
-<?php include('include/sidebar.php');?>				
+            <div class="col-xs-12 col-sm-12 col-md-3 sidebar">
+				<!-- ================================== TOP NAVIGATION ================================== -->
+	<?php include('includes/side-menu.php');?>
+<!-- ================================== TOP NAVIGATION : END ================================== -->
+			</div><!-- /.sidemenu-holder -->	
+			
+			<div class="col-xs-12 col-sm-12 col-md-9 homebanner-holder">			
 			<div class="span9">
 					<div class="content">
 
@@ -150,14 +215,14 @@ while($row=mysqli_fetch_array($query))
 </div>
 </div>
 <div class="control-group">
-<label class="control-label" for="basicinput">Product Price Before Discount</label>
+<label class="control-label" for="basicinput">Product Price </label>
 <div class="controls">
 <input type="text"    name="productpricebd"  placeholder="Enter Product Price" class="span8 tip" required>
 </div>
 </div>
 
 <div class="control-group">
-<label class="control-label" for="basicinput">Product Price After Discount(Selling Price)</label>
+<label class="control-label" for="basicinput">Re-Enter </label>
 <div class="controls">
 <input type="text"    name="productprice"  placeholder="Enter Product Price" class="span8 tip" required>
 </div>
@@ -172,7 +237,7 @@ while($row=mysqli_fetch_array($query))
 </div>
 
 <div class="control-group">
-<label class="control-label" for="basicinput">Product Shipping Charge</label>
+<label class="control-label" for="basicinput">Product Delivery Charge</label>
 <div class="controls">
 <input type="text"    name="productShippingcharge"  placeholder="Enter Product Shipping Charge" class="span8 tip" required>
 </div>
@@ -234,13 +299,28 @@ while($row=mysqli_fetch_array($query))
 		</div><!--/.container-->
 	</div><!--/.wrapper-->
 
-<?php include('include/footer.php');?>
+<?php include('admin/include/footer.php');?>
 
-	<script src="scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
-	<script src="scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
-	<script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="scripts/flot/jquery.flot.js" type="text/javascript"></script>
-	<script src="scripts/datatables/jquery.dataTables.js"></script>
+	<script src="admin/scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
+	<script src="admin/scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
+	<script src="admin/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="admin/scripts/flot/jquery.flot.js" type="text/javascript"></script>
+	<script src="admin/scripts/datatables/jquery.dataTables.js"></script>
+    <script src="assets/js/jquery-1.11.1.min.js"></script>
+	
+	<script src="assets/js/bootstrap.min.js"></script>
+	
+	<script src="assets/js/bootstrap-hover-dropdown.min.js"></script>
+	<script src="assets/js/owl.carousel.min.js"></script>
+	
+	<script src="assets/js/echo.min.js"></script>
+	<script src="assets/js/jquery.easing-1.3.min.js"></script>
+	<script src="assets/js/bootstrap-slider.min.js"></script>
+    <script src="assets/js/jquery.rateit.min.js"></script>
+    <script type="text/javascript" src="assets/js/lightbox.min.js"></script>
+    <script src="assets/js/bootstrap-select.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+	<script src="assets/js/scripts.js"></script>
 	<script>
 		$(document).ready(function() {
 			$('.datatable-1').dataTable();
@@ -251,4 +331,6 @@ while($row=mysqli_fetch_array($query))
 		} );
 	</script>
 </body>
-<?php } ?>
+<?php 
+ }
+ ?>
