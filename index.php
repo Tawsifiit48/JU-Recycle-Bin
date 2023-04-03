@@ -27,8 +27,8 @@ if(isset($_GET['action']) && $_GET['action']=="add"){
 <html lang="en">
 	<head>
 		<!-- Meta -->
-		<meta charset="utf-8">
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta chaBDTet="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; chaBDTet=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<meta name="description" content="">
 		<meta name="author" content="">
@@ -95,13 +95,13 @@ if(isset($_GET['action']) && $_GET['action']=="add"){
 <div id="hero" class="homepage-slider3">
 	<div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm">
 		<div class="full-width-slider">	
-			<div class="item" style="background-image: url(assets/images/sliders/slider5.jpg);">
+			<div class="item" style="background-image: url(assets/images/slideBDT/slider5.jpg);">
 				<!-- /.container-fluid -->
 			</div><!-- /.item -->
 		</div><!-- /.full-width-slider -->
 	    
 	    <div class="full-width-slider">
-			<div class="item full-width-slider" style="background-image: url(assets/images/sliders/slider4.jpg);">
+			<div class="item full-width-slider" style="background-image: url(assets/images/slideBDT/slider4.jpg);">
 			</div><!-- /.item -->
 		</div><!-- /.full-width-slider -->
 
@@ -123,7 +123,7 @@ if(isset($_GET['action']) && $_GET['action']=="add"){
 							<h4 class="info-box-heading green">money back</h4>
 						</div>
 					</div>	
-					<h6 class="text">30 Day Money Back Guarantee.</h6>
+					<h6 class="text">15 Day Money Back Guarantee.</h6>
 				</div>
 			</div><!-- .col -->
 
@@ -210,8 +210,8 @@ while ($row=mysqli_fetch_array($ret))
 
 			<div class="product-price">	
 				<span class="price">
-					Rs.<?php echo htmlentities($row['productPrice']);?>			</span>
-										     <span class="price-before-discount">Rs.<?php echo htmlentities($row['productPriceBeforeDiscount']);?>	</span>
+					BDT.<?php echo htmlentities($row['productPrice']);?>			</span>
+										     <span class="price-before-discount">BDT.<?php echo htmlentities($row['productPriceBeforeDiscount']);?>	</span>
 									
 			</div><!-- /.product-price -->
 			
@@ -268,8 +268,8 @@ while ($row=mysqli_fetch_array($ret))
 
 			<div class="product-price">	
 				<span class="price">
-					Rs. <?php echo htmlentities($row['productPrice']);?>			</span>
-										     <span class="price-before-discount">Rs.<?php echo htmlentities($row['productPriceBeforeDiscount']);?></span>
+					BDT. <?php echo htmlentities($row['productPrice']);?>			</span>
+										     <span class="price-before-discount">BDT.<?php echo htmlentities($row['productPriceBeforeDiscount']);?></span>
 									
 			</div><!-- /.product-price -->
 			
@@ -326,8 +326,8 @@ while ($row=mysqli_fetch_array($ret))
 
 			<div class="product-price">	
 				<span class="price">
-					Rs.<?php echo htmlentities($row['productPrice']);?>			</span>
-										     <span class="price-before-discount">Rs.<?php echo htmlentities($row['productPriceBeforeDiscount']);?></span>
+					BDT.<?php echo htmlentities($row['productPrice']);?>			</span>
+										     <span class="price-before-discount">BDT.<?php echo htmlentities($row['productPriceBeforeDiscount']);?></span>
 									
 			</div>
 			
@@ -385,8 +385,8 @@ while ($row=mysqli_fetch_array($ret))
 
 			<div class="product-price">	
 				<span class="price">
-					Rs. <?php echo htmlentities($row['productPrice']);?>			</span>
-										     <span class="price-before-discount">Rs.<?php echo htmlentities($row['productPriceBeforeDiscount']);?></span>
+					BDT. <?php echo htmlentities($row['productPrice']);?>			</span>
+										     <span class="price-before-discount">BDT.<?php echo htmlentities($row['productPriceBeforeDiscount']);?></span>
 									
 			</div>
 			
@@ -435,8 +435,8 @@ while ($row=mysqli_fetch_array($ret))
 
 			<div class="product-price">	
 				<span class="price">
-					Rs .<?php echo htmlentities($row['productPrice']);?>			</span>
-										     <span class="price-before-discount">Rs.<?php echo htmlentities($row['productPriceBeforeDiscount']);?></span>
+					BDT .<?php echo htmlentities($row['productPrice']);?>			</span>
+										     <span class="price-before-discount">BDT.<?php echo htmlentities($row['productPriceBeforeDiscount']);?></span>
 									
 			</div>
 			
@@ -464,7 +464,7 @@ while ($row=mysqli_fetch_array($ret))
 		
 
 	<section class="section featured-product inner-xs wow fadeInUp">
-		<h3 class="section-title">Fashion</h3>
+		<h3 class="section-title">Cycle</h3>
 		<div class="owl-carousel best-seller custom-carousel owl-theme outer-top-xs">
 			<?php
 $ret=mysqli_query($con,"select * from products where category=6");
@@ -500,7 +500,7 @@ while ($row=mysqli_fetch_array($ret))
 											<div class="rating rateit-small"></div>
 											<div class="product-price">	
 												<span class="price">
-													Rs. <?php echo htmlentities($row['productPrice']);?>
+													BDT. <?php echo htmlentities($row['productPrice']);?>
 												</span>
 
 											</div><!-- /.product-price -->
