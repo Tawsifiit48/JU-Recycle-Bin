@@ -31,9 +31,9 @@ if(!is_dir($dir)){
 		mkdir("productimages/".$productid);
 	}
 
-	move_uploaded_file($_FILES["productimage1"]["tmp_name"],"productimages/$productid/".$_FILES["productimage1"]["name"]);
-	move_uploaded_file($_FILES["productimage2"]["tmp_name"],"productimages/$productid/".$_FILES["productimage2"]["name"]);
-	move_uploaded_file($_FILES["productimage3"]["tmp_name"],"productimages/$productid/".$_FILES["productimage3"]["name"]);
+	move_uploaded_file($_FILES["productimage1"]["tmp_name"],"admin/productimages/$productid/".$_FILES["productimage1"]["name"]);
+	move_uploaded_file($_FILES["productimage2"]["tmp_name"],"admin/productimages/$productid/".$_FILES["productimage2"]["name"]);
+	move_uploaded_file($_FILES["productimage3"]["tmp_name"],"admin/productimages/$productid/".$_FILES["productimage3"]["name"]);
 $sql=mysqli_query($con,"insert into products(category,subCategory,productName,productCompany,productPrice,productDescription,shippingCharge,productAvailability,productImage1,productImage2,productImage3,productPriceBeforeDiscount) values('$category','$subcat','$productname','$productcompany','$productprice','$productdescription','$productscharge','$productavailability','$productimage1','$productimage2','$productimage3','$productpricebd')");
 $_SESSION['msg']="Product Inserted Successfully !!";
 
@@ -86,7 +86,7 @@ $_SESSION['msg']="Product Inserted Successfully !!";
 function getSubcat(val) {
 	$.ajax({
 	type: "POST",
-	url: "get_subcat.php",
+	url: "admin/get_subcat.php",
 	data:'cat_id='+val,
 	success: function(data){
 		$("#subcategory").html(data);
